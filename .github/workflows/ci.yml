@@ -41,14 +41,9 @@ jobs:
       run: |
         mypy app/ --ignore-missing-imports
     
-    - name: Test without database (unit tests)
+    - name: Test with pytest (skip database tests)
       run: |
-        pytest test/test_api.py::TestAPIStructure -v
-        pytest test/test_api.py::TestAPI::test_health_check -v
-    
-    - name: Test with mock database (integration tests)
-      run: |
-        pytest tests/ -k "not database" --cov=app --cov-report=xml -v
+        pytest --cov=app --cov-report=xml -m "not database"
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
