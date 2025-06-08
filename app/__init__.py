@@ -1,3 +1,16 @@
-from .api import create_app
+from flask import Flask
+import os
 
-__version__ = "1.0.0"
+
+def create_app():
+    app = Flask(__name__)
+
+    # Configuration
+    app.config["DATABASE"] = os.path.join(os.path.dirname(__file__), "..", "data.db")
+
+    # Register routes
+    from app.routes import api_bp
+
+    app.register_blueprint(api_bp)
+
+    return app
