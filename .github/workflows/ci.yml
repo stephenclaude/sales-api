@@ -43,8 +43,8 @@ jobs:
     
     - name: Test without database (unit tests)
       run: |
-        pytest tests/test_api.py::TestAPIStructure -v
-        pytest tests/test_api.py::TestAPI::test_health_check -v
+        pytest test/test_api.py::TestAPIStructure -v
+        pytest test/test_api.py::TestAPI::test_health_check -v
     
     - name: Test with mock database (integration tests)
       run: |
