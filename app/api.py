@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
-from typing import Dict, Any
+from typing import Union, Tuple, Dict, Any
 import logging
 from .database import Database
 
