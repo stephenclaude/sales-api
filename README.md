@@ -93,7 +93,11 @@ pip install -r requirements.txt
 
 ### 4. Add database file
 
-Place your `data.db` file in the project root directory.
+Download the SQLite database file from: [https://drive.google.com/file/d/1IZDjJZG6Jo_XCVd5QnqCxhAEvslQOYp3/view?usp=sharing](https://drive.google.com/file/d/1IZDjJZG6Jo_XCVd5QnqCxhAEvslQOYp3/view?usp=sharing)
+
+Save it as `data.db` in the project root directory.
+
+**Note**: The database file is not included in the repository for security and size reasons.
 
 ## Running the Application
 
