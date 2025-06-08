@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
-from typing import Dict, Any
+from typing import Union, Tuple, Dict, Any
 import logging
 from .database import Database
 
@@ -13,7 +13,7 @@ class TopSellerByYear(Resource):
     def __init__(self):
         self.db = Database()
 
-    def get(self, year: int) -> Dict[str, Any]:
+    def get(self, year: int) -> Union[Dict[str, Any], Tuple[Dict[str, Any], int]]:
         """Get top sales rep for a specific year"""
         try:
             # Validate year
@@ -51,7 +51,7 @@ class TopSellers(Resource):
     def __init__(self):
         self.db = Database()
 
-    def get(self) -> Dict[str, Any]:
+    def get(self) -> Union[Dict[str, Any], Tuple[Dict[str, Any], int]]:
         """Get all top sales reps with optional ordering"""
         try:
             # Get query parameters
